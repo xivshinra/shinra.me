@@ -37,6 +37,6 @@ export const projectDatas = [
     technologies: ["Nextjs", "TailwindCSS", "Supabase"],
     githubUrl: "https://github.com/xivshinra",
     demoUrl: "https://xivshinra.vercel.app/",
-    imgUrl: "/assets/logo-gold.png",
+    imgUrl: "/assets/assodemo.jpg",
   },
 ];

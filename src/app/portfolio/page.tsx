@@ -15,8 +15,29 @@ import {
 } from "@/components/ui/card";
 // IMPORTS
 import { projectDatas } from "@/datas/project-datas";
-import { Code, CodeIcon, EllipsisVertical, Eye } from "lucide-react";
+import { Code, EllipsisVertical, Eye } from "lucide-react";
 import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+import {
+  SiCss3,
+  SiFigma,
+  SiHtml5,
+  SiJavascript,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiReact,
+  SiShadcnui,
+  SiSupabase,
+  SiTailwindcss,
+} from "react-icons/si";
 
 // COMPONENT
 export default function PortfolioPage() {
@@ -36,23 +57,62 @@ export default function PortfolioPage() {
             <CardHeader>
               <h2 className="text-xl font-semibold font-exo">{project.name}</h2>
               <CardAction>
-                <Badge
-                  variant="outline"
-                  className="cursor-pointer p-2 rounded-full"
-                >
-                  <EllipsisVertical />
-                </Badge>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Badge
+                      variant="outline"
+                      className="cursor-pointer p-2 rounded-full"
+                    >
+                      <EllipsisVertical />
+                    </Badge>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem>
+                        <Link
+                          href={`/portfolio/${project.id}`}
+                          title="Présentation du projet"
+                        >
+                          En savoir plus
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Code source
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Démo live
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem>Copier le lien</DropdownMenuItem>
+                    </DropdownMenuGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </CardAction>
             </CardHeader>
             <CardContent className="flex flex-col md:flex-row gap-4">
               <Image
                 src={project.imgUrl}
                 alt={project.name}
-                width={150}
-                height={150}
-                className="mb-2 rounded aspect-square object-cover"
+                width={120}
+                height={120}
+                draggable={false}
+                className="mb-2 rounded aspect-square object-cover pointer-events-none"
               />
-              <CardDescription>{project.description}</CardDescription>
+              <CardDescription className="leading-relaxed">
+                {project.description}
+              </CardDescription>
             </CardContent>
             <CardFooter className="flex-col items-start gap-4">
               <div className="flex gap-2 lg:gap-4 mb-4">
@@ -60,7 +120,7 @@ export default function PortfolioPage() {
                   <Badge
                     key={technology}
                     variant="outline"
-                    className="cursor-default"
+                    className="cursor-pointer"
                   >
                     {technology}
                   </Badge>
@@ -103,42 +163,56 @@ export default function PortfolioPage() {
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-8 my-8 lg:justify-between">
-        <CodeIcon
+      <div className="flex flex-wrap gap-8 my-8 lg:justify-between text-muted">
+        <SiHtml5
           size={40}
-          className="text-muted"
+          title="HTML5"
+          className="hover:text-primary"
         />
-        <CodeIcon
+        <SiCss3
           size={40}
-          className="text-muted"
+          title="CSS3"
+          className="hover:text-primary"
         />
-        <CodeIcon
+        <SiTailwindcss
           size={40}
-          className="text-muted"
+          title="Tailwind CSS"
+          className="hover:text-primary"
         />
-        <CodeIcon
+        <SiShadcnui
           size={40}
-          className="text-muted"
+          title="shadcn UI"
+          className="hover:text-primary"
         />
-        <CodeIcon
+        <SiJavascript
           size={40}
-          className="text-muted"
+          title="JavaScript"
+          className="hover:text-primary"
         />
-        <CodeIcon
+        <SiNodedotjs
           size={40}
-          className="text-muted"
+          title="Node.js"
+          className="hover:text-primary"
         />
-        <CodeIcon
+        <SiReact
           size={40}
-          className="text-muted"
+          title="React.js"
+          className="hover:text-primary"
         />
-        <CodeIcon
+        <SiNextdotjs
           size={40}
-          className="text-muted"
+          title="Next.js"
+          className="hover:text-primary"
         />
-        <CodeIcon
+        <SiSupabase
           size={40}
-          className="text-muted"
+          title="Supabase"
+          className="hover:text-primary"
+        />
+        <SiFigma
+          size={40}
+          title="Figma"
+          className="hover:text-primary"
         />
       </div>
     </>

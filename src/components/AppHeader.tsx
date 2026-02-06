@@ -16,7 +16,10 @@ export default function AppHeader() {
       </div>
       <div className="flex items-center gap-2">
         <ModeToggle />
-        <Button asChild>
+        <Button
+          asChild
+          className="bg-linear-to-br from-indigo-500 to-violet-700"
+        >
           <Link href="/contact">
             <Mail />
             Devis gratuit
