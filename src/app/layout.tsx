@@ -2,10 +2,23 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import "./globals.css";
+import { Nunito, Exo_2 } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import AppHeader from "@/components/AppHeader";
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-nunito",
+});
+
+const exo2 = Exo_2({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-exo2",
+});
 
 export const metadata: Metadata = {
   title: "Shinra.me",
@@ -18,13 +31,13 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const cookieStore = await cookies();
-  const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
+  const defaultOpen = cookieStore.get("sidebar_state")?.value === "false";
   return (
     <html
       lang="en"
       suppressHydrationWarning
     >
-      <body className="antialiased">
+      <body className={`${nunito.className} ${exo2.variable}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

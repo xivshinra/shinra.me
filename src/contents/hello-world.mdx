@@ -1,4 +1,4 @@
-<div className='space-y-4 bg-card p-4 lg:px-12 xl:px-32 2xl:px-48 2xl:py-12 2xl:space-y-8'>
+<div className='space-y-4 bg-card xl:bg-background xl:shadow-none p-4 lg:px-12 xl:px-32 2xl:px-48 2xl:py-8 2xl:space-y-8 shadow-2xl'>
 
 <div className="flex justify-center">
   <img
@@ -11,16 +11,18 @@
   />
 </div>
 
-<h1 className="text-center">
-  I am a{" "}
-  <span className="text-indigo-500 animate-pulse">fancy text _</span>
-</h1>
+<h1 className="text-center">I am a <span className="text-primary animate-pulse">fancy text _</span></h1>
 
 I am building my website from scratch with Nextjs, TailwindCSS and MDX... and it looks good.
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corrupti fugit, ab, nisi molestias et, facilis accusamus modi laudantium minima consectetur totam dolore ducimus unde? Non alias repellendus aspernatur veritatis quo dicta modi quos iusto quae autem soluta totam, tempore est. Sapiente, id perspiciatis ad eum nobis earum maxime laborum incidunt consequuntur, blanditiis corrupti ea! Suscipit quasi, optio eum labore delectus voluptatum quia eveniet perferendis repudiandae officiis cumque aliquid sint odit molestias corporis temporibus ut laborum saepe atque unde deleniti praesentium. Quibusdam iste distinctio magnam. Ipsum accusamus sequi architecto doloribus similique iste, dolorum, temporibus esse cum fugiat quas et ad.
 
-<DemoCta link="https://github.com/xivshinra" text="View my Github" className="my-8" />
+<DemoCta
+  link="/portfolio"
+  text="Voir mes projets et compétences"
+  textBtn="Portfolio"
+  className="my-8"
+/>
 
 ## Subheading
 
@@ -34,8 +36,14 @@ Am I another p tag ?
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corrupti fugit, ab, nisi molestias et, facilis accusamus modi laudantium minima consectetur totam dolore ducimus unde? Non alias repellendus aspernatur veritatis quo dicta modi quos iusto quae autem soluta totam, tempore est. Sapiente, id perspiciatis ad eum nobis earum maxime laborum incidunt consequuntur, blanditiis corrupti ea! Suscipit quasi, optio eum labore delectus voluptatum quia eveniet perferendis repudiandae officiis cumque aliquid sint odit molestias corporis temporibus ut laborum saepe atque unde deleniti praesentium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corrupti fugit, ab, nisi molestias et, facilis accusamus modi laudantium minima consectetur totam dolore ducimus unde? Non alias repellendus aspernatur veritatis quo dicta modi quos iusto quae autem soluta totam, tempore est. Sapiente, id perspiciatis ad eum nobis earum maxime laborum incidunt consequuntur, blanditiis corrupti ea! Suscipit quasi, optio eum labore delectus voluptatum quia eveniet perferendis repudiandae officiis cumque aliquid sint odit molestias corporis temporibus ut laborum saepe atque unde deleniti praesentium.
 
-<DemoCta link="/blog" text="Explore my blog" className="my-8" />
+<DemoCta
+  link="/blog"
+  text="Je partage aussi des idées et des expériences sur mon blog"
+  textBtn="Blog"
+  isBlank="true"
+  className="my-8"
+/>
 
-<p className="text-sm text-muted-foreground italic">Updated by <span className="text-indigo-500">Shinra</span> - 01/01/26</p>
+<p className="text-sm text-blue-400-foreground italic">Updated by <span className="text-indigo-500">Shinra</span> - 01/01/26</p>
 
 </div>

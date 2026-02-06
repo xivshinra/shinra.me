@@ -1,4 +1,7 @@
+"use client";
+
 // IMPORTS
+import { usePathname } from "next/dist/client/components/navigation";
 import {
   Sidebar,
   SidebarContent,
@@ -15,34 +18,70 @@ import Link from "next/link";
 
 // COMPONENT
 export function AppSidebar() {
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
+
   return (
-    <Sidebar>
+    <Sidebar variant="floating">
       <SidebarHeader />
+
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Pages</SidebarGroupLabel>
+          <SidebarGroupLabel>Menu</SidebarGroupLabel>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive>
-                <Link href="/">Home</Link>
+              <SidebarMenuButton
+                asChild
+                isActive={isActive("/")}
+              >
+                <Link href="/">Accueil</Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton
+                asChild
+                isActive={isActive("/blog")}
+              >
                 <Link href="/blog">Blog</Link>
               </SidebarMenuButton>
               <SidebarMenuBadge>New</SidebarMenuBadge>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton
+                asChild
+                isActive={isActive("/portfolio")}
+              >
                 <Link href="/portfolio">Portfolio</Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                asChild
+                isActive={isActive("/contact")}
+              >
+                <Link href="/contact">Contact</Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroup>
         <SidebarGroup />
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter>
+        <p className="text-sm text-muted-foreground italic">
+          Updated by{" "}
+          <a
+            href="https://github.com/xivshinra"
+            className="text-indigo-500"
+          >
+            Shinra
+          </a>{" "}
+          - 06/02/26
+        </p>
+      </SidebarFooter>
     </Sidebar>
   );
 }
