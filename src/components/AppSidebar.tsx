@@ -44,15 +44,6 @@ export function AppSidebar() {
             <SidebarMenuItem>
               <SidebarMenuButton
                 asChild
-                isActive={isActive("/blog")}
-              >
-                <Link href="/blog">Blog</Link>
-              </SidebarMenuButton>
-              <SidebarMenuBadge>New</SidebarMenuBadge>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton
-                asChild
                 isActive={isActive("/portfolio")}
               >
                 <Link href="/portfolio">Portfolio</Link>
@@ -61,10 +52,19 @@ export function AppSidebar() {
             <SidebarMenuItem>
               <SidebarMenuButton
                 asChild
-                isActive={isActive("/contact")}
+                isActive={isActive("/services")}
               >
-                <Link href="/contact">Contact</Link>
+                <Link href="/services">Services & Tarifs</Link>
               </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                asChild
+                isActive={isActive("/blog")}
+              >
+                <Link href="/blog">Blog</Link>
+              </SidebarMenuButton>
+              <SidebarMenuBadge>New</SidebarMenuBadge>
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroup>
