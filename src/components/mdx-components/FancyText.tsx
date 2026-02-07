@@ -1,21 +1,20 @@
 "use client";
 
-import * as React from "react";
+import { useState, useEffect } from "react";
 
 const words = [
-  "frontend developer",
-  "React builder",
-  "Next.js enjoyer",
-  "UI designer",
-  "Supabase tinkerer",
+  "Identité visuelle",
+  "Site web",
+  "Application mobile",
+  "Hébergement",
 ];
 
 export default function FancyText() {
-  const [index, setIndex] = React.useState(0);
-  const [text, setText] = React.useState("");
-  const [deleting, setDeleting] = React.useState(false);
+  const [index, setIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [deleting, setDeleting] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const word = words[index];
 
     let timeout: NodeJS.Timeout;
@@ -47,9 +46,9 @@ export default function FancyText() {
   }, [text, deleting, index]);
 
   return (
-    <h1 className="text-center text-3xl font-semibold">
-      I am a{" "}
-      <span className="text-primary">
+    <h1 className="text-center">
+      Comment puis-je vous aider ?.
+      <span className="text-primary block mt-4">
         {text}
         <span className="ml-1 animate-blink">|</span>
       </span>

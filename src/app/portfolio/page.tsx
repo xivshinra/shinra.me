@@ -25,19 +25,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-import {
-  SiCss3,
-  SiFigma,
-  SiHtml5,
-  SiJavascript,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiReact,
-  SiShadcnui,
-  SiSupabase,
-  SiTailwindcss,
-} from "react-icons/si";
+import SkillSection from "@/components/SkillSection";
 
 // COMPONENT
 export default function PortfolioPage() {
@@ -162,59 +150,7 @@ export default function PortfolioPage() {
           </Card>
         ))}
       </div>
-
-      <div className="flex flex-wrap gap-8 my-8 lg:justify-between text-muted">
-        <SiHtml5
-          size={40}
-          title="HTML5"
-          className="hover:text-primary"
-        />
-        <SiCss3
-          size={40}
-          title="CSS3"
-          className="hover:text-primary"
-        />
-        <SiTailwindcss
-          size={40}
-          title="Tailwind CSS"
-          className="hover:text-primary"
-        />
-        <SiShadcnui
-          size={40}
-          title="shadcn UI"
-          className="hover:text-primary"
-        />
-        <SiJavascript
-          size={40}
-          title="JavaScript"
-          className="hover:text-primary"
-        />
-        <SiNodedotjs
-          size={40}
-          title="Node.js"
-          className="hover:text-primary"
-        />
-        <SiReact
-          size={40}
-          title="React.js"
-          className="hover:text-primary"
-        />
-        <SiNextdotjs
-          size={40}
-          title="Next.js"
-          className="hover:text-primary"
-        />
-        <SiSupabase
-          size={40}
-          title="Supabase"
-          className="hover:text-primary"
-        />
-        <SiFigma
-          size={40}
-          title="Figma"
-          className="hover:text-primary"
-        />
-      </div>
+      <SkillSection />
     </>
   );
 }

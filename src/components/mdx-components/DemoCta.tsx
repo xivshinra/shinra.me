@@ -22,7 +22,10 @@ export default function DemoCta({
   return (
     <div className={cn("border-l-4 pl-4 border-primary", className)}>
       <p className="text-blue-400-foreground italic">{text}</p>
-      <Button asChild>
+      <Button
+        asChild
+        size="sm"
+      >
         <Link
           href={link}
           className="no-underline"

@@ -19,6 +19,7 @@ export default function AppHeader() {
         <Button
           asChild
           className="bg-linear-to-br from-indigo-500 to-violet-700"
+          size="sm"
         >
           <Link href="/contact">
             <Mail />

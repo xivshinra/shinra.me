@@ -7,6 +7,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import AppHeader from "@/components/AppHeader";
+import AppLights from "@/components/AppLights";
+import AppFooter from "@/components/AppFooter";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -27,11 +29,13 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const cookieStore = await cookies();
-  const defaultOpen = cookieStore.get("sidebar_state")?.value === "false";
+
+  const defaultOpen = cookieStore.get("sidebar_state")?.value !== "false";
+
   return (
     <html
       lang="en"
@@ -46,12 +50,17 @@ export default async function RootLayout({
         >
           <SidebarProvider defaultOpen={defaultOpen}>
             <AppSidebar />
-            <main className="p-4 w-full max-w-360 mx-auto">
+
+            <main className="relative p-4 w-full max-w-360 mx-auto">
+              <AppLights />
+
               <AppHeader />
               {children}
+              <AppFooter />
             </main>
           </SidebarProvider>
         </ThemeProvider>
+
         <Analytics />
       </body>
     </html>
