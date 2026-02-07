@@ -34,12 +34,12 @@ const formSchema = z.object({
   title: z
     .string()
     .min(5, "Form title must be at least 5 characters.")
-    .max(32, "Form title must be at most 32 characters."),
+    .max(60, "Form title must be at most 60 characters."),
   email: z.string().email("Please enter a valid email address."),
   description: z
     .string()
     .min(20, "Description must be at least 20 characters.")
-    .max(100, "Description must be at most 100 characters."),
+    .max(500, "Description must be at most 500 characters."),
 });
 
 export default function ContactPage() {
@@ -53,7 +53,7 @@ export default function ContactPage() {
   });
 
   function onSubmit(data: z.infer<typeof formSchema>) {
-    toast("You submitted the following values:", {
+    toast("Vous avez envoyé le message suivant:", {
       description: (
         <pre className="bg-code text-code-foreground mt-2 w-[320px] overflow-x-auto rounded-md p-4">
           <code>{JSON.stringify(data, null, 2)}</code>
@@ -70,16 +70,16 @@ export default function ContactPage() {
   }
 
   return (
-    <Card className="w-full sm:max-w-md mx-auto my-8">
+    <Card className="w-full sm:max-w-md mx-auto my-8 lg:my-12 shadow-2xl shadow-indigo-500/20">
       <CardHeader>
         <CardTitle>Formulaire de contact</CardTitle>
-        <CardDescription>
+        {/* <CardDescription>
           Envoyez vos demandes, questions ou projets.
-        </CardDescription>
+        </CardDescription> */}
       </CardHeader>
       <CardContent>
         <form
-          id="form-rhf-demo"
+          id="form-contact"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <FieldGroup>
@@ -88,10 +88,10 @@ export default function ContactPage() {
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor="form-rhf-demo-title">Objet</FieldLabel>
+                  <FieldLabel htmlFor="form-contact-title">Objet</FieldLabel>
                   <Input
                     {...field}
-                    id="form-rhf-demo-title"
+                    id="form-contact-title"
                     aria-invalid={fieldState.invalid}
                     placeholder="Quelle est la nature de votre demande ?"
                     autoComplete="off"
@@ -107,10 +107,10 @@ export default function ContactPage() {
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor="form-rhf-demo-email">Email</FieldLabel>
+                  <FieldLabel htmlFor="form-contact-email">Email</FieldLabel>
                   <Input
                     {...field}
-                    id="form-rhf-demo-email"
+                    id="form-contact-email"
                     aria-invalid={fieldState.invalid}
                     placeholder="votre.email@exemple.com"
                     type="email"
@@ -127,21 +127,21 @@ export default function ContactPage() {
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor="form-rhf-demo-description">
+                  <FieldLabel htmlFor="form-contact-description">
                     Message
                   </FieldLabel>
                   <InputGroup>
                     <InputGroupTextarea
                       {...field}
-                      id="form-rhf-demo-description"
-                      placeholder="Décrivez votre demande, question ou projet. N'hésitez pas à détailler au maximum pour que je puisse comprendre vos besoins."
+                      id="form-contact-description"
+                      placeholder="Décrivez votre demande, question ou projet."
                       rows={6}
                       className="min-h-24 resize-none"
                       aria-invalid={fieldState.invalid}
                     />
                     <InputGroupAddon align="block-end">
                       <InputGroupText className="tabular-nums">
-                        {field.value.length}/100 characters
+                        {field.value.length}/500 characters
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
@@ -169,7 +169,7 @@ export default function ContactPage() {
           </Button>
           <Button
             type="submit"
-            form="form-rhf-demo"
+            form="form-contact"
           >
             Envoyer
           </Button>

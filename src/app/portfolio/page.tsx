@@ -33,8 +33,10 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <div className="mb-8">
-        <h2 className="text-xl font-bold">Mes projets</h2>
+      <div className="my-8">
+        <h2 className="text-xl font-semibold font-exo2 mb-8 xs:mb-4">
+          Mes projets
+        </h2>
       </div>
       <div className="grid grid-cols-12 gap-4 lg:gap-6 2xl:gap-8">
         {projects.map((project) => (

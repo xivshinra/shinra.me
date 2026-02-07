@@ -21,7 +21,7 @@ export default function DemoCta({
 }: DemoCtaProps) {
   return (
     <div className={cn("border-l-4 pl-4 border-primary", className)}>
-      <p className="text-blue-400-foreground italic">{text}</p>
+      <p className="text-blue-400-foreground italic text-sm">{text}</p>
       <Button
         asChild
         size="sm"

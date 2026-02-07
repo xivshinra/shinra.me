@@ -28,25 +28,30 @@ const items = [
 
 export function FaqSection() {
   return (
-    <Accordion
-      type="single"
-      collapsible
-      defaultValue="item-1"
-      className="p-4 lg:px-12 xl:px-32 2xl:px-48"
-    >
-      {items.map((item) => (
-        <AccordionItem
-          key={item.value}
-          value={item.value}
-        >
-          <AccordionTrigger className="text-base">
-            {item.trigger}
-          </AccordionTrigger>
-          <AccordionContent className="text-base leading-7 text-muted-foreground">
-            <p>{item.content}</p>
-          </AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
+    <div className="p-4 lg:px-12 xl:px-32 2xl:px-48">
+      <h2 className="text-xl font-semibold font-exo2 mb-4">
+        Questions fréquentes
+      </h2>
+      <Accordion
+        type="single"
+        collapsible
+        defaultValue="item-1"
+        className=""
+      >
+        {items.map((item) => (
+          <AccordionItem
+            key={item.value}
+            value={item.value}
+          >
+            <AccordionTrigger className="text-base leading-7">
+              {item.trigger}
+            </AccordionTrigger>
+            <AccordionContent className="text-base leading-7 text-muted-foreground">
+              <p>{item.content}</p>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </div>
   );
 }
