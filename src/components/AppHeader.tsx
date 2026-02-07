@@ -9,24 +9,26 @@ import Link from "next/link";
 // COMPONENT
 export default function AppHeader() {
   return (
-    <div className="flex justify-between py-4 mb-4">
-      <div className="flex items-center gap-2">
-        <SidebarTrigger />
-        <AppBreadcrumb />
+    <>
+      <div className="flex justify-between py-4">
+        <div className="flex items-center gap-2">
+          <SidebarTrigger />
+          <AppBreadcrumb />
+        </div>
+        <div className="flex items-center gap-2">
+          <ModeToggle />
+          <Button
+            asChild
+            className="bg-linear-to-br from-indigo-500 to-violet-700"
+            size="sm"
+          >
+            <Link href="/contact">
+              <Mail />
+              Devis gratuit
+            </Link>
+          </Button>
+        </div>
       </div>
-      <div className="flex items-center gap-2">
-        <ModeToggle />
-        <Button
-          asChild
-          className="bg-linear-to-br from-indigo-500 to-violet-700"
-          size="sm"
-        >
-          <Link href="/contact">
-            <Mail />
-            Devis gratuit
-          </Link>
-        </Button>
-      </div>
-    </div>
+    </>
   );
 }

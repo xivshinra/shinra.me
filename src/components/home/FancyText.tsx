@@ -46,9 +46,9 @@ export default function FancyText() {
   }, [text, deleting, index]);
 
   return (
-    <h1 className="text-center">
-      Comment puis-je vous aider ?.
-      <span className="text-primary block mt-4">
+    <h1 className="text-center text-2xl font-exo2 font-bold">
+      Comment puis-je vous aider ?
+      <span className="text-primary block mt-6">
         {text}
         <span className="ml-1 animate-blink">|</span>
       </span>
