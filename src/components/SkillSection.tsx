@@ -25,7 +25,7 @@ function SkillSection() {
   return (
     <div className="my-12 md:my-16">
       <h2 className="text-xl font-semibold font-exo2">Outils et compétences</h2>
-      <div className="grid grid-cols-10 gap-8 lg:gap-y-16 py-8 lg:py-12 lg:justify-between text-gray-950 dark:text-muted">
+      <div className="grid grid-cols-10 gap-8 lg:gap-y-16 py-8 lg:py-12 lg:justify-between text-gray-600 dark:text-muted-foreground">
         <div className=" flex justify-center items-center col-span-2 lg:col-span-1">
           <SiHtml5
             size={40}

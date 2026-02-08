@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 
 const words = [
   "Identité visuelle",
-  "Site web",
+  "Site internet",
   "Application mobile",
   "Hébergement",
+  "Automatisation IA",
+  "Espace de gestion",
 ];
 
 export default function FancyText() {
@@ -46,9 +48,9 @@ export default function FancyText() {
   }, [text, deleting, index]);
 
   return (
-    <h1 className="text-center text-2xl font-exo2 font-bold">
-      Comment puis-je vous aider ?
-      <span className="text-primary block mt-6">
+    <h1 className="text-center text-2xl leading-16 font-exo2 font-bold">
+      Réalisons vos objectifs
+      <span className="text-primary block mt-4 lg:text-3xl">
         {text}
         <span className="ml-1 animate-blink">|</span>
       </span>

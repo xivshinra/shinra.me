@@ -21,10 +21,11 @@ export default function DemoCta({
 }: DemoCtaProps) {
   return (
     <div className={cn("border-l-4 pl-4 border-primary", className)}>
-      <p className="text-blue-400-foreground italic text-sm">{text}</p>
+      <p className="text-muted-foreground italic">{text}</p>
       <Button
         asChild
         size="sm"
+        className="rounded-xs px-6 font-exo2"
       >
         <Link
           href={link}

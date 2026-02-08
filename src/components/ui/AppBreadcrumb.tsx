@@ -36,7 +36,7 @@ export function AppBreadcrumb() {
   const segments = pathname.split("/").filter(Boolean);
 
   const crumbs = [
-    { label: "shinra.me", href: "/" },
+    { label: "LB.studio", href: "/" },
     ...segments.map((seg, idx) => {
       const href = "/" + segments.slice(0, idx + 1).join("/");
       return { label: formatSegmentLabel(seg), href };
